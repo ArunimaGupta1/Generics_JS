@@ -1,14 +1,11 @@
-function display(items:any[]){
-
-    for(var i=0;i<items.length;i++){
-        console.log(items[i]);
-    }
+function display<T>(items: T[]): T[] {
+    return new Array<T>().concat(items);
 }
 
-let str=["Apple","Ball","Cat","Dog","Egg"];
-let num=[23,34,5,67,89,90,23];
+let str = display<string>(["Apple", "Ball", "Cat", "Dog", "Egg"]);
+let num = display<number>([23, 34, 5, 67, 89, 90, 23]);
 
-console.log("display String Array");
-display(str);
-console.log("display Numbers Array");
-display(num);
+console.log("String Array");
+console.log(str);
+console.log("Number Array");
+console.log(num);
